@@ -1,3 +1,37 @@
+                  ┌─────────────────────────────┐
+                  │  NONAN IMU Dataset (CSV)    │
+                  └───────────────┬─────────────┘
+                                  │
+                                  ▼
+                     ┌────────────────────────┐
+                     │ csv_to_gait2392_mot.py │
+                     │  Convert IMU → .mot    │
+                     └──────────────┬─────────┘
+                                    │
+                                    ▼
+                        ┌────────────────────┐
+                        │ run_muscle_lengths │
+                        │  OpenSim Gait2392  │
+                        │  → muscle lengths  │
+                        └─────────┬──────────┘
+                                  │
+                                  ▼
+                    ┌────────────────────────────┐
+                    │ gait_cycle_muscle_lengths  │
+                    │  cycle detection + 0–100%  │
+                    └──────────────┬─────────────┘
+                                   │
+                                   ▼
+                        ┌───────────────────────┐
+                        │ plot_muscles / all    │
+                        │ mean + SD + ROM plots │
+                        └─────────────┬─────────┘
+                                      │
+                                      ▼
+                            ┌────────────────┐
+                            │ Results/Report │
+                            └────────────────┘
+							
 Predicting Lower Limb Muscle Length from IMU Gait Data
 
 (Proof-of-concept pipeline using NONAN GaitPrint dataset + OpenSim)

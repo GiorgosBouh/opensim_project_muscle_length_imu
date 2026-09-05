@@ -1,0 +1,19 @@
+{
+  "subjects":2,
+  "trials":6,
+  "cycles":1397,
+  "conditions":[
+    "expanded_3d",
+    "legacy_hip3d",
+    "sagittal"
+  ],
+  "muscles_total":10,
+  "primary_muscles":6,
+  "hamstring_muscles":4,
+  "mean_legacy_hip3d_nrmse_pct_rom":6.1942794687,
+  "max_legacy_hip3d_nrmse_pct_rom":57.8017234929,
+  "mean_3d_nrmse_pct_rom":6.1942794687,
+  "max_3d_nrmse_pct_rom":57.8017234929,
+  "max_uncertainty_rom_delta_abs_pct":30.6098093308,
+  "max_existing_repro_rmse_m":5.016260954e-17
+}

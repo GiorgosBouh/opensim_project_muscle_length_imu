@@ -1,0 +1,23 @@
+{
+  "dataset": "GAITEX local mirror",
+  "source_path": "set with GAITEX_DATA_DIR",
+  "ng_subjects_discovered": 18,
+  "subjects_attempted": 18,
+  "segments_attempted": 54,
+  "segments_completed": 54,
+  "subjects_completed": 18,
+  "segment_seconds_per_subject": 1.5,
+  "max_segments_per_subject": 3,
+  "gaitex_original_models_have_muscles": false,
+  "subject_scaled_muscle_models_have_muscles": true,
+  "subject_scaled_muscle_model_method": "GAITEX scaled skeleton plus Gait2392 muscle actuators",
+  "subject_scaled_muscle_models": 18,
+  "downstream_mtu_model": "models/gait2392_simbody.osim",
+  "median_right_knee_angle_corr": 0.9845725675925527,
+  "median_right_ankle_angle_corr": 0.8840703302712125,
+  "median_mtu_corr": 0.8799275525779557,
+  "median_mtu_nrmse_pct_imu_rom": 23.77162932879829,
+  "key_joint_segments_all_rmse_le_10_deg": 34,
+  "key_joint_segments_all_rmse_le_20_deg": 43,
+  "key_joint_segments_all_rmse_le_50_deg": 51
+}

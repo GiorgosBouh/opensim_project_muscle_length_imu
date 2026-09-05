@@ -1,0 +1,16 @@
+{
+  "nonan_subjects_scaled": 2,
+  "nonan_trials_in_scaling_analysis": 6,
+  "max_scaled_vs_unscaled_nrmse_pct_rom": 439.30557948574994,
+  "mean_scaled_vs_unscaled_nrmse_pct_rom": 70.90248549606795,
+  "dorschky_reference_subjects_downloaded": 1,
+  "dorschky_reference_movements": [
+    "fastwalking",
+    "normwalking",
+    "slowwalking"
+  ],
+  "mean_nonan_vs_dorschky_normwalking_corr": 0.7904047919450036,
+  "median_nonan_vs_dorschky_normwalking_corr": 0.887847154315298,
+  "downloaded_nonan_metadata_doi": "10.6084/m9.figshare.27815034.v1",
+  "downloaded_dorschky_dataset_doi": "10.5281/zenodo.11522050"
+}

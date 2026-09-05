@@ -1,233 +1,187 @@
-                  ┌─────────────────────────────┐
-                  │  NONAN IMU Dataset (CSV)    │
-                  └───────────────┬─────────────┘
-                                  │
-                                  ▼
-                     ┌────────────────────────┐
-                     │ csv_to_gait2392_mot.py │
-                     │  Convert IMU → .mot    │
-                     └──────────────┬─────────┘
-                                    │
-                                    ▼
-                        ┌────────────────────┐
-                        │ run_muscle_lengths │
-                        │  OpenSim Gait2392  │
-                        │  → muscle lengths  │
-                        └─────────┬──────────┘
-                                  │
-                                  ▼
-                    ┌────────────────────────────┐
-                    │ gait_cycle_muscle_lengths  │
-                    │  cycle detection + 0–100%  │
-                    └──────────────┬─────────────┘
-                                   │
-                                   ▼
-                        ┌───────────────────────┐
-                        │ plot_muscles / all    │
-                        │ mean + SD + ROM plots │
-                        └─────────────┬─────────┘
-                                      │
-                                      ▼
-                            ┌────────────────┐
-                            │ Results/Report │
-                            └────────────────┘
-							
-Predicting Lower Limb Muscle Length from IMU Gait Data
+# OpenSim IMU Gait MTU Reproducibility Package
 
-(Proof-of-concept pipeline using NONAN GaitPrint dataset + OpenSim)
+This repository supports the manuscript:
 
-This repository provides a simple and reproducible pipeline for estimating lower-limb muscle–tendon lengths using only IMU-based joint kinematic data and the Gait2392 musculoskeletal model in OpenSim.
+**OpenSim-Based Estimation of Muscle-Tendon Length Trajectories from Commercial IMU-Derived Gait Kinematics**
 
-It demonstrates that muscle lengths can be derived without:
-	•	optical motion capture
-	•	force plates
-	•	laboratory-grade equipment
+It contains the analysis scripts, compact verification outputs, generated figures, and OpenSim model files needed to reproduce the computational workflow. Large raw datasets are not included; they should be downloaded from the public sources listed in `DATA_SOURCES.md`.
 
-The method only requires IMU joint-angle data.
+## What This Package Reproduces
 
-⸻
+The workflow converts processed IMU-derived hip, knee, and ankle joint angles into OpenSim muscle-tendon unit (MTU) length trajectories. It then evaluates reproducibility, sensitivity to modeling choices, anthropometric scaling, and same-subject IMU versus optical motion capture agreement.
 
-1. Dataset Used
+The manuscript reports four linked analyses:
 
-We use publicly available IMU gait data from:
+1. Primary NONAN GaitPrint demonstration using six gait trials from two healthy older adults.
+2. Gait2392 MTU extraction for six primary lower limb muscles and four hamstrings.
+3. Sensitivity analyses for three dimensional input, joint angle offsets, and anthropometry informed scaling.
+4. GAITEX paired modality validation using wearable inertial and optical motion capture gait recordings from 18 participants.
 
-Wiles et al. (2025),
-NONAN GaitPrint: An IMU gait database of healthy older adults
-https://springernature.figshare.com/articles/dataset/NONAN_GaitPrint_An_IMU_gait_database_of_healthy_older_adults/27815034
+These analyses produce model based MTU waveforms. They are not direct in vivo muscle length measurements.
 
-The dataset contains:
-	•	41 healthy older adults
-	•	full-body IMU walking trials
-	•	overground walking on a 200 m track
-	•	spatiotemporal variables + raw kinematics
+## Repository Layout
 
-For this proof-of-concept we selected:
-	•	Subject S135: 3 walking trials
-	•	Subject S146: 3 walking trials
+```text
+.
+├── README.md
+├── DATA_SOURCES.md
+├── requirements.txt
+├── environment.yml
+├── scripts/
+│   ├── batch_csv_to_mot.py
+│   ├── compute_mtu_cv.py
+│   ├── csv_to_gait2392_mot.py
+│   ├── gait_cycle_muscle_lengths.py
+│   ├── gaitex_same_subject_validation.py
+│   ├── inspect_trial.py
+│   ├── plot_all_subjects.py
+│   ├── plot_muscle_lengths.py
+│   ├── run_all_plots.sh
+│   ├── run_muscle_lengths.py
+│   ├── run_static_optimization.py
+│   ├── top_tier_experiments.py
+│   └── validation_scaling_reproducibility.py
+├── models/
+│   ├── gait2392_simbody.osim
+│   └── gaitex_subject_scaled_muscle_models/
+├── outputs/
+├── figures/
+└── manuscript/
+```
 
-⸻
+## Software Requirements
 
-2. Dependencies
+The scripts require Python with the OpenSim Python API. The most reliable setup is a conda environment containing OpenSim, numpy, pandas, matplotlib, and pyarrow.
 
-Required:
-	•	Python 3.9+
-	•	OpenSim 4.5
-	•	NumPy
-	•	pandas
-	•	matplotlib
+```bash
+conda env create -f environment.yml
+conda activate opensim-imu-mtu
+```
 
-Install OpenSim using conda: conda create -n opensim_env python=3.9
-conda activate opensim_env
-conda install -c opensim-org -c conda-forge opensim
-pip install numpy pandas matplotlib
+If OpenSim is already installed in another environment, install the pure Python dependencies with:
 
-3. Files Required
+```bash
+python -m pip install -r requirements.txt
+```
 
-Download and place these in the working folder:S135/S135_G03_D01_B01_T0X.csv
-S146/S146_G03_D01_B01_T0X.csv
-gait2392_simbody.osim
+Then confirm that OpenSim can be imported:
 
-4. Scripts and What They Do
+```bash
+python -c "import opensim; print('OpenSim Python API available')"
+```
 
-inspect_trial.py
+## Required Data Layout
 
-Used to check a trial:
-	•	prints column names
-	•	checks duration and sampling
+Place the primary NONAN trial folders at the repository root:
 
-run_muscle_lengths.py   (core step)
+```text
+S135/
+S146/
+```
 
-This is where OpenSim is used.
-For every frame of IMU data it:
-	•	loads Gait2392 model
-	•	applies joint angles
-	•	calculates muscle–tendon length
+Place public metadata and reference datasets under:
 
-Outputs muscle lengths for 6 key muscles:
-	•	gluteus medius
-	•	rectus femoris
-	•	vastus lateralis
-	•	tibialis anterior
-	•	soleus
-	•	medial gastrocnemius
+```text
+external_validation_data/
+├── nonan_figshare_27815034/
+└── dorschky_zenodo_11522050/
+```
 
-gait_cycle_muscle_lengths.py
+For GAITEX, either place the extracted dataset under:
 
-Takes the long time-series and:
-	•	identifies heel strikes
-	•	splits the signal into gait cycles
-	•	normalizes each cycle to 0–100%
+```text
+data/gaitex/
+```
 
-plot_muscle_lengths.py
+or set:
 
-Plots IMU→OpenSim muscle lengths for one trial:
-	•	mean curve
-	•	variability bands
-	•	heatmap
+```bash
+export GAITEX_DATA_DIR="/absolute/path/to/GAITEX/data"
+```
 
-plot_all_subjects.py
+The included base OpenSim model is:
 
-Compares all 6 trials:
-	•	subject-wise mean ± SD curves
-	•	S135 vs S146 comparison plots
+```text
+models/gait2392_simbody.osim
+```
 
-Not used in this analysis
-	•	run_static_optimization.py (requires GRF)
-	•	batch_csv_to_mot.py (optional utility)
+To use another Gait2392 model, set:
 
-⸻
+```bash
+export GAIT2392_MODEL="/absolute/path/to/gait2392_simbody.osim"
+```
 
-5. Full Pipeline (Step-by-Step)
+## Run Order
 
-Step 1 — Extract muscle length:
+Run commands from the repository root.
 
-For each trial:python run_muscle_lengths.py model.osim TRIAL.csv TRIAL_muscles.csv
+1. Convert NONAN CSV files to Gait2392 `.mot` files, if needed:
 
-Example: python run_muscle_lengths.py \
-  gait2392_simbody.osim \
-  S135/S135_G03_D01_B01_T01.csv \
-  S135_G03_D01_B01_T01_muscles.csv
+```bash
+python scripts/batch_csv_to_mot.py
+```
 
-You will get a file like: S135_G03_D01_B01_T01_muscles.csv
-Step 2 — Normalize into gait cycles
-python gait_cycle_muscle_lengths.py \
-  TRIAL.csv \
-  TRIAL_muscles.csv \
-  TRIAL_muscles_normcycles.csv
-  For example: python gait_cycle_muscle_lengths.py \
-  S135/S135_G03_D01_B01_T01.csv \
-  S135_G03_D01_B01_T01_muscles.csv \
-  S135_G03_D01_B01_T01_muscles_normcycles.csv
-  
-  Step 3 — Plot per-trial muscle behavior
-  python plot_muscle_lengths.py TRIAL_normcycles.csv OUTPUT_FOLDER
+2. Compute primary muscle lengths for a single trial:
 
-  Step 4 — Compare all subjects
-  python plot_all_subjects.py
+```bash
+python scripts/run_muscle_lengths.py models/gait2392_simbody.osim S135/S135_G03_D01_B01_T01.csv S135_G03_D01_B01_T01_muscles.csv
+```
 
-  This generates:
-	•	mean ± SD per subject
-	•	subject comparison plots
+3. Generate primary plots:
 
-⸻
+```bash
+python scripts/plot_all_subjects.py
+```
 
-6. Output
+4. Run the manuscript sensitivity and hamstring analyses:
 
-You will get:
-	•	muscle_length CSV files
-	•	gait-cycle normalized CSV files
-	•	per-trial plots
-	•	cross-subject comparison plots
+```bash
+python scripts/top_tier_experiments.py
+```
 
-These show:
-	•	physiological muscle-length patterns across gait
-	•	variability between trials
-	•	differences between participants
+5. Run the scaling and external optical reference analyses:
 
-⸻
+```bash
+python scripts/validation_scaling_reproducibility.py
+```
 
-7. Why this is useful
+6. Run the GAITEX paired modality benchmark:
 
-This pipeline demonstrates that muscle–tendon behavior can be approximated from IMU data alone, which enables:
-	•	field-based analysis
-	•	low-cost assessment
-	•	non-laboratory biomechanics
-	•	suitability for clinics, sports science, and rehabilitation
+```bash
+python scripts/gaitex_same_subject_validation.py
+```
 
-No motion capture or force plates needed.
+## Expected Key Outputs
 
-⸻
+The included `outputs/` folder contains compact outputs from the manuscript run, including:
 
-8. Notes & Known Limitations
-	•	No EMG or ground truth is included (proof-of-concept only)
-	•	Real-time implementation is possible
-	•	Can be easily extended to more muscles or subjects
+- `mtu_repeatability_summary.csv`
+- `top_tier_experiment_summary.json`
+- `validation_scaling_reproducibility_summary.json`
+- `gaitex_same_subject_validation_summary.json`
+- `gaitex_same_subject_kinematic_metrics.csv`
+- `gaitex_same_subject_mtu_metrics.csv`
+- `gaitex_key_joint_qc_summary.csv`
+- `sagittal_vs_3d_sensitivity.csv`
+- `scaled_vs_unscaled_waveform_sensitivity.csv`
 
-⸻
+Large generated files such as all normalized MTU cycles and full regenerated marker IK files are intentionally not included. They can be regenerated by running the scripts above after downloading the data.
 
-9. Contact and Licence
+## Manuscript Reference Results
 
-For questions, file an issue or extend the scripts.
-MIT License
+The current manuscript reports:
 
-Copyright (c) 2025 Dr. Georgios Bouchouras
-https://giorgosbouh.github.io/github-portfolio/
+- Six primary gait trials from two NONAN GaitPrint participants.
+- 1397 detected right gait cycles.
+- Ten analyzed MTUs: six primary lower limb muscles and four hamstrings.
+- Output regeneration RMSE below 0.001 mm.
+- Gluteus medius ROM increase of 131% when three dimensional hip motion was included.
+- Mean scaled versus unscaled normalized RMSE of 70.9% of unscaled ROM.
+- GAITEX median IMU and optical correlations of 0.985 knee, 0.924 hip, and 0.884 ankle.
+- GAITEX median MTU waveform correlation of 0.880 and normalized RMSE of 23.8%.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
-in the Software without restriction, including without limitation the rights 
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-copies of the Software, and to permit persons to whom the Software is 
-furnished to do so, subject to the following conditions:
+## Git Notes
 
-The above copyright notice and this permission notice shall be included in 
-all copies or substantial portions of the Software.
+This package is designed for public version control. Keep raw datasets out of Git unless their license and size make that appropriate. The `.gitignore` excludes common raw data folders, cache files, and large regenerated outputs.
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR 
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
-OTHER DEALINGS IN THE SOFTWARE.
-  
+Before publishing, update the repository URL in the manuscript and add any dataset license notes required by NONAN, Dorschky, GAITEX, or OpenSim.

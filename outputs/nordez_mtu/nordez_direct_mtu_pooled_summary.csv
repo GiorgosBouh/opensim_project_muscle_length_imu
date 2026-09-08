@@ -1,0 +1,3 @@
+muscle,n_subjects,n_posture_records,mean_absolute_error_mm,mean_signed_error_pct,median_subject_posture_correlation,mean_subject_posture_correlation
+gaslat_r,14,83,30.88677215546793,-6.291698404171497,0.9258742918131792,0.914030538629813
+gasmed_r,14,83,35.61373267539338,-7.147420693166702,0.9083705220272116,0.893437286319178

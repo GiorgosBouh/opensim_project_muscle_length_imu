@@ -1,0 +1,23 @@
+{
+  "subject": "S01",
+  "posture": "GAS5",
+  "marker_file": "/tmp/S01_GAS5_Stand.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 530.1444760554846,
+    "gaslat_r": 521.1000236092378
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 508.2522926854912,
+      "min_mm": 508.186290560343,
+      "max_mm": 508.3388212416028,
+      "rom_mm": 0.15253068125974778
+    },
+    "gaslat_r": {
+      "mean_mm": 504.6171088641842,
+      "min_mm": 504.55403470222893,
+      "max_mm": 504.69332254149066,
+      "rom_mm": 0.13928783926172628
+    }
+  }
+}

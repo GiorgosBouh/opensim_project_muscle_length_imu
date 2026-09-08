@@ -1,0 +1,23 @@
+{
+  "subject": "S14",
+  "posture": "GAS3",
+  "marker_file": "/tmp/S14_GAS3_ADF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 463.06609838739604,
+    "gaslat_r": 457.6741374753939
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 466.29071427568385,
+      "min_mm": 466.218278393944,
+      "max_mm": 466.37996473248717,
+      "rom_mm": 0.16168633854317704
+    },
+    "gaslat_r": {
+      "mean_mm": 461.8649619224354,
+      "min_mm": 461.79593618419426,
+      "max_mm": 461.9612732987027,
+      "rom_mm": 0.16533711450841793
+    }
+  }
+}

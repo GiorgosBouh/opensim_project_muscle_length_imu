@@ -1,0 +1,26 @@
+{
+  "dataset": "Nordez/Guenanten",
+  "subject": "S01",
+  "postures": [
+    "S01_GAS1_Static",
+    "S01_GAS2a_APF",
+    "S01_GAS2b_KF",
+    "S01_GAS3_ADF",
+    "S01_GAS4_KF_ADF",
+    "S01_GAS5_Stand"
+  ],
+  "gasmed_r": {
+    "direct_rom_mm": 49.108519664714095,
+    "opensim_rom_mm": 57.145168449467576,
+    "mean_absolute_error_mm": 30.040140516611853,
+    "mean_signed_error_percent": -5.9323887578471695,
+    "posture_level_pearson_r": 0.9506650032377238
+  },
+  "gaslat_r": {
+    "direct_rom_mm": 46.63232480191442,
+    "opensim_rom_mm": 59.60553363807844,
+    "mean_absolute_error_mm": 27.967617218284317,
+    "mean_signed_error_percent": -5.604593449133517,
+    "posture_level_pearson_r": 0.9558455391341686
+  }
+}

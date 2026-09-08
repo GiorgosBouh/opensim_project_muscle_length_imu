@@ -1,0 +1,25 @@
+{
+  "subjects_with_records": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14"
+  ],
+  "n_subjects": 14,
+  "n_posture_records": 83,
+  "missing_posture_records": 1,
+  "median_subject_correlation_gasmed": 0.9083705220272116,
+  "median_subject_correlation_gaslat": 0.9258742918131792,
+  "mean_signed_error_percent_gasmed": -7.147420693166702,
+  "mean_signed_error_percent_gaslat": -6.291698404171499
+}

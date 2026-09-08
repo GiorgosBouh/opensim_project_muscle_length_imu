@@ -1,0 +1,23 @@
+{
+  "subject": "S04",
+  "posture": "GAS2b",
+  "marker_file": "/tmp/S04_GAS2b_KF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 479.20005117474506,
+    "gaslat_r": 464.05465612505157
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 449.6889799009792,
+      "min_mm": 449.60808550447996,
+      "max_mm": 449.88461688713784,
+      "rom_mm": 0.276531382657879
+    },
+    "gaslat_r": {
+      "mean_mm": 445.43736809224225,
+      "min_mm": 445.3550991172031,
+      "max_mm": 445.63772615044013,
+      "rom_mm": 0.28262703323702
+    }
+  }
+}

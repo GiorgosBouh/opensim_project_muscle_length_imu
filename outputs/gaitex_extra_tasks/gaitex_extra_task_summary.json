@@ -1,0 +1,32 @@
+{
+  "analysis": "GAITEX extra task MTU validation",
+  "gaitex_dir": "/home/ilab/project3/Project_3.0/data",
+  "tasks_requested": [
+    "ng",
+    "gwo",
+    "rd",
+    "rgs"
+  ],
+  "subjects_attempted": 19,
+  "segments_per_label": 1,
+  "window_seconds": 1.5,
+  "complete_subject_task_rows": 73,
+  "segments_attempted": 257,
+  "segments_completed": 257,
+  "tasks_completed": [
+    "gwo",
+    "ng",
+    "rd",
+    "rgs"
+  ],
+  "median_key_joint_corr": 0.9453213668746326,
+  "median_mtu_corr": 0.9081042197823335,
+  "median_mtu_nrmse_pct_of_imu_rom": 33.150270751671314,
+  "outputs": {
+    "status": "/home/ilab/venv/OpenSim_Based_Estimation_of_Muscle_Tendon_Length_Trajectories_from_Commercial_IMU_Derived_Gait_Kinematics-2/gaitex_extra_tasks/gaitex_extra_task_status.csv",
+    "kinematic_metrics": "/home/ilab/venv/OpenSim_Based_Estimation_of_Muscle_Tendon_Length_Trajectories_from_Commercial_IMU_Derived_Gait_Kinematics-2/gaitex_extra_tasks/gaitex_extra_task_kinematic_metrics.csv",
+    "mtu_metrics": "/home/ilab/venv/OpenSim_Based_Estimation_of_Muscle_Tendon_Length_Trajectories_from_Commercial_IMU_Derived_Gait_Kinematics-2/gaitex_extra_tasks/gaitex_extra_task_mtu_metrics.csv",
+    "condition_summary": "/home/ilab/venv/OpenSim_Based_Estimation_of_Muscle_Tendon_Length_Trajectories_from_Commercial_IMU_Derived_Gait_Kinematics-2/gaitex_extra_tasks/gaitex_extra_task_condition_summary.csv",
+    "waveforms": "/home/ilab/venv/OpenSim_Based_Estimation_of_Muscle_Tendon_Length_Trajectories_from_Commercial_IMU_Derived_Gait_Kinematics-2/gaitex_extra_tasks/gaitex_extra_task_mtu_waveforms.csv"
+  }
+}

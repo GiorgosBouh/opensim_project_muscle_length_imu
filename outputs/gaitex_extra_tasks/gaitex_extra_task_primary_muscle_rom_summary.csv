@@ -1,0 +1,91 @@
+task,segment_label,muscle_label,median_imu_rom_mm
+gwo,gwo_v0,Glut. medius,4.37052852900415
+gwo,gwo_v0,Med. gastrocnemius,6.8756730053485
+gwo,gwo_v0,Rect. femoris,11.811839688280399
+gwo,gwo_v0,Soleus,4.600490981589799
+gwo,gwo_v0,Tib. anterior,7.920996133419601
+gwo,gwo_v0,Vast. lateralis,4.214479285176549
+gwo,gwo_v1,Glut. medius,14.6686631480902
+gwo,gwo_v1,Med. gastrocnemius,18.24497712762495
+gwo,gwo_v1,Rect. femoris,27.1413900922762
+gwo,gwo_v1,Soleus,19.09558631745925
+gwo,gwo_v1,Tib. anterior,21.32563651183275
+gwo,gwo_v1,Vast. lateralis,11.9370009906675
+gwo,gwo_v2,Glut. medius,15.867292202189402
+gwo,gwo_v2,Med. gastrocnemius,20.05157484279725
+gwo,gwo_v2,Rect. femoris,27.80540245850965
+gwo,gwo_v2,Soleus,20.541563311176
+gwo,gwo_v2,Tib. anterior,19.48121653533725
+gwo,gwo_v2,Vast. lateralis,12.373660685861351
+ng,ng_v0,Glut. medius,3.43779126530515
+ng,ng_v0,Med. gastrocnemius,7.6599093780685
+ng,ng_v0,Rect. femoris,21.67543815919665
+ng,ng_v0,Soleus,5.6656032325857
+ng,ng_v0,Tib. anterior,7.450979016297401
+ng,ng_v0,Vast. lateralis,15.27846362380875
+ng,ng_v1,Glut. medius,12.8653335729011
+ng,ng_v1,Med. gastrocnemius,24.526879546129948
+ng,ng_v1,Rect. femoris,72.25083070615705
+ng,ng_v1,Soleus,25.48206061176225
+ng,ng_v1,Tib. anterior,23.8885921418206
+ng,ng_v1,Vast. lateralis,57.00546935257606
+ng,ng_v2,Glut. medius,12.9383847970513
+ng,ng_v2,Med. gastrocnemius,25.180676412281898
+ng,ng_v2,Rect. femoris,72.7847193067544
+ng,ng_v2,Soleus,26.80985876412755
+ng,ng_v2,Tib. anterior,24.681290646365447
+ng,ng_v2,Vast. lateralis,58.2511622875049
+ng,ng_v3,Glut. medius,28.4000841521567
+ng,ng_v3,Med. gastrocnemius,33.0471552694856
+ng,ng_v3,Rect. femoris,83.6728190167519
+ng,ng_v3,Soleus,34.846769049145905
+ng,ng_v3,Tib. anterior,27.2400276950838
+ng,ng_v3,Vast. lateralis,66.7322552357192
+rd,rd_correct,Glut. medius,1.9691874541753998
+rd,rd_correct,Med. gastrocnemius,20.6046807701867
+rd,rd_correct,Rect. femoris,6.1146709118088
+rd,rd_correct,Soleus,19.5198270663224
+rd,rd_correct,Tib. anterior,21.4162145889591
+rd,rd_correct,Vast. lateralis,5.501708045560299
+rd,rd_pronation,Glut. medius,2.8075486069981004
+rd,rd_pronation,Med. gastrocnemius,16.8472588104729
+rd,rd_pronation,Rect. femoris,6.6616132831396
+rd,rd_pronation,Soleus,15.744431048402198
+rd,rd_pronation,Tib. anterior,15.477411660778401
+rd,rd_pronation,Vast. lateralis,6.4457206523271
+rd,rd_supination,Glut. medius,2.2184767628777
+rd,rd_supination,Med. gastrocnemius,17.0113578680918
+rd,rd_supination,Rect. femoris,4.1572109706085
+rd,rd_supination,Soleus,15.8339267334917
+rd,rd_supination,Tib. anterior,23.3055812949207
+rd,rd_supination,Vast. lateralis,3.4131169553137
+rd,rd_toes,Glut. medius,1.7613839308804
+rd,rd_toes,Med. gastrocnemius,18.897286345751102
+rd,rd_toes,Rect. femoris,3.7582267429197
+rd,rd_toes,Soleus,18.4317604853528
+rd,rd_toes,Tib. anterior,24.9793582823929
+rd,rd_toes,Vast. lateralis,3.6058686479291997
+rgs,rgs_abduction,Glut. medius,14.156922371689948
+rgs,rgs_abduction,Med. gastrocnemius,37.41410790032165
+rgs,rgs_abduction,Rect. femoris,39.63785669850716
+rgs,rgs_abduction,Soleus,35.903796880329
+rgs,rgs_abduction,Tib. anterior,33.5374046190909
+rgs,rgs_abduction,Vast. lateralis,29.64338236703445
+rgs,rgs_correct,Glut. medius,10.1788396612607
+rgs,rgs_correct,Med. gastrocnemius,20.715963423321902
+rgs,rgs_correct,Rect. femoris,64.4880813708833
+rgs,rgs_correct,Soleus,16.924955584394
+rgs,rgs_correct,Tib. anterior,19.994037760034153
+rgs,rgs_correct,Vast. lateralis,50.64449581604285
+rgs,rgs_flexion,Glut. medius,8.525887450795299
+rgs,rgs_flexion,Med. gastrocnemius,30.60088261698305
+rgs,rgs_flexion,Rect. femoris,75.7666405954791
+rgs,rgs_flexion,Soleus,32.88579961292265
+rgs,rgs_flexion,Tib. anterior,29.813542494882597
+rgs,rgs_flexion,Vast. lateralis,43.16079803956815
+rgs,rgs_stork,Glut. medius,7.999467079936051
+rgs,rgs_stork,Med. gastrocnemius,34.04826131076795
+rgs,rgs_stork,Rect. femoris,86.31085401949355
+rgs,rgs_stork,Soleus,39.99894051644315
+rgs,rgs_stork,Tib. anterior,33.8416109253474
+rgs,rgs_stork,Vast. lateralis,52.072191189589

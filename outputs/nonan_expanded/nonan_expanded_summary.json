@@ -1,0 +1,15 @@
+{
+  "participants": 4,
+  "subjects": [
+    "S135",
+    "S146",
+    "S140",
+    "S142"
+  ],
+  "trials": 12,
+  "cycles": 2708,
+  "muscles": 10,
+  "median_participant_rom_cv_pct": 2.7290645495402215,
+  "median_participant_mean_rom_m": 0.03376060292022674,
+  "participant_level_rows": 40
+}

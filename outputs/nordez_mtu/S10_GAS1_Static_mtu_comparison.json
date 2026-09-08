@@ -1,0 +1,23 @@
+{
+  "subject": "S10",
+  "posture": "GAS1",
+  "marker_file": "/tmp/S10_GAS1_Static.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 455.5341320873976,
+    "gaslat_r": 444.4549325022337
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 428.22603302773615,
+      "min_mm": 428.1632483367537,
+      "max_mm": 428.3421637253931,
+      "rom_mm": 0.17891538863938194
+    },
+    "gaslat_r": {
+      "mean_mm": 423.4496433235582,
+      "min_mm": 423.3920037028874,
+      "max_mm": 423.5819419255874,
+      "rom_mm": 0.18993822269999328
+    }
+  }
+}

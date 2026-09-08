@@ -1,0 +1,23 @@
+{
+  "subject": "S14",
+  "posture": "GAS1",
+  "marker_file": "/tmp/S14_GAS1_Static.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 453.5351711941363,
+    "gaslat_r": 449.149332984933
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 450.5881289870214,
+      "min_mm": 450.4770462896501,
+      "max_mm": 450.7139816660339,
+      "rom_mm": 0.23693537638376938
+    },
+    "gaslat_r": {
+      "mean_mm": 446.44245733949913,
+      "min_mm": 446.355311865685,
+      "max_mm": 446.5499080752875,
+      "rom_mm": 0.19459620960248003
+    }
+  }
+}

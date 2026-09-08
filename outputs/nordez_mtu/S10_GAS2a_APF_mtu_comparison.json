@@ -1,0 +1,23 @@
+{
+  "subject": "S10",
+  "posture": "GAS2a",
+  "marker_file": "/tmp/S10_GAS2a_APF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 436.5932820835415,
+    "gaslat_r": 428.4035469920877
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 413.3171578250225,
+      "min_mm": 413.25843936506715,
+      "max_mm": 413.53958132397366,
+      "rom_mm": 0.2811419589065167
+    },
+    "gaslat_r": {
+      "mean_mm": 407.9603382516915,
+      "min_mm": 407.899160456987,
+      "max_mm": 408.1995109895412,
+      "rom_mm": 0.3003505325542051
+    }
+  }
+}

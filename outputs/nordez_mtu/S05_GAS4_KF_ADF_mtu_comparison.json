@@ -1,0 +1,23 @@
+{
+  "subject": "S05",
+  "posture": "GAS4",
+  "marker_file": "/tmp/S05_GAS4_KF_ADF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 440.297059394773,
+    "gaslat_r": 442.5844356583283
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 420.85153631864245,
+      "min_mm": 420.78790727868545,
+      "max_mm": 420.92478579258477,
+      "rom_mm": 0.13687851389931893
+    },
+    "gaslat_r": {
+      "mean_mm": 417.9454599129382,
+      "min_mm": 417.88464586716367,
+      "max_mm": 418.01798614067724,
+      "rom_mm": 0.1333402735135678
+    }
+  }
+}

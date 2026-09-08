@@ -1,0 +1,23 @@
+{
+  "subject": "S06",
+  "posture": "GAS2a",
+  "marker_file": "/tmp/S06_GAS2a_APF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 473.39591830828647,
+    "gaslat_r": 464.0345884068632
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 436.0501080925469,
+      "min_mm": 435.96319351027984,
+      "max_mm": 436.2834684904812,
+      "rom_mm": 0.32027498020136136
+    },
+    "gaslat_r": {
+      "mean_mm": 430.73282146706987,
+      "min_mm": 430.6427537219905,
+      "max_mm": 430.98465359348546,
+      "rom_mm": 0.3418998714949453
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "dataset": "Nordez/Guenanten 3D ultrasound MTU dataset",
+  "subject": "S01",
+  "posture": "GAS1",
+  "ik_file": "/tmp/S01_GAS1_ik.mot",
+  "n_ik_frames": 25,
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 504.23331474606147,
+    "gaslat_r": 496.9331666352875
+  },
+  "opensim_generic_model_lengths": {
+    "gasmed_r": {
+      "mean_mm": 499.1827159875943,
+      "min_mm": 499.1827159875943,
+      "max_mm": 499.1827159875943,
+      "rom_mm": 0.0
+    },
+    "gaslat_r": {
+      "mean_mm": 495.34168758610696,
+      "min_mm": 495.34168758610696,
+      "max_mm": 495.34168758610696,
+      "rom_mm": 0.0
+    }
+  },
+  "interpretation": "Pilot comparison only. The C3D-to-TRC IK run used 20 of 24 model markers and must be replaced or checked against the official setup before treating this as validation."
+}

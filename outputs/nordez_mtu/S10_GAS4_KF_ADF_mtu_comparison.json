@@ -1,0 +1,23 @@
+{
+  "subject": "S10",
+  "posture": "GAS4",
+  "marker_file": "/tmp/S10_GAS4_KF_ADF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 458.72508362987446,
+    "gaslat_r": 456.6023883830245
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 443.36197165438324,
+      "min_mm": 443.33709740737294,
+      "max_mm": 443.38603585360613,
+      "rom_mm": 0.0489384462331941
+    },
+    "gaslat_r": {
+      "mean_mm": 439.74045608195735,
+      "min_mm": 439.7137840398085,
+      "max_mm": 439.76770959962425,
+      "rom_mm": 0.05392555981575242
+    }
+  }
+}

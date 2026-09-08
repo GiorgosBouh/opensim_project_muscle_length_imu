@@ -1,0 +1,23 @@
+{
+  "subject": "S10",
+  "posture": "GAS2b",
+  "marker_file": "/tmp/S10_GAS2b_KF.trc",
+  "direct_3dus_lengths_mm": {
+    "gasmed_r": 451.15144496899535,
+    "gaslat_r": 444.1580998840313
+  },
+  "opensim_lengths_mm": {
+    "gasmed_r": {
+      "mean_mm": 420.5644461859071,
+      "min_mm": 420.4827415425105,
+      "max_mm": 420.7038843847473,
+      "rom_mm": 0.2211428422368158
+    },
+    "gaslat_r": {
+      "mean_mm": 416.59173827433597,
+      "min_mm": 416.5123986983926,
+      "max_mm": 416.73549819541273,
+      "rom_mm": 0.22309949702014364
+    }
+  }
+}
